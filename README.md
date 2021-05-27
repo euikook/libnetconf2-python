@@ -16,7 +16,8 @@ $ python setup.py install
 Usage
 -----
 
+```
 >>> import netconf2
 >>> session = netconf2.Session('localhost', 830)
 >>> del(session)
-
+```
