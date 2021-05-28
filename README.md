@@ -1,4 +1,4 @@
-This source code has been forked from [libnetconf2](https://github.com/CESNET/libnetconf2/) because the Python binding has been removed from the main source tree.
+This source code has been forked from [libnetconf2](https://github.com/CESNET/libnetconf2/) because the Python binding has been removed from the [libnetconf2](https://github.com/CESNET/libnetconf2/) main source tree.
 
 Requirements
 ------------
