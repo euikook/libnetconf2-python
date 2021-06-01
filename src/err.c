@@ -20,7 +20,7 @@
 #include <string.h>
 
 #include "netconf.h"
-#include "libnetconf2/messages_p.h"
+//#include "libnetconf2/messages_p.h"
 
 static void
 ncErrFree(ncErrObject *self)

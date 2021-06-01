@@ -21,7 +21,7 @@
 #include <libyang/libyang.h>
 #include <libyang/swigpyrun.h>
 
-#include "libnetconf2/messages_p.h"
+//#include "libnetconf2/messages_p.h"
 #include "netconf.h"
 #include "session.h"
 
@@ -77,8 +77,9 @@ err_reply_converter(struct nc_client_reply_error *reply)
 {
     uint32_t i = 0;
     ncErrObject *e;
-    PyObject *result;
+    PyObject *result = NULL;
 
+#if 0
     result = PyList_New(reply->count);
     for (i = 0; i < reply->count; i++) {
         e = PyObject_New(ncErrObject, &ncErrType);
@@ -90,6 +91,7 @@ err_reply_converter(struct nc_client_reply_error *reply)
     free(reply->err); /* pointers to the data were moved, so we are freeing just a container for the data */
     reply->err = NULL;
     reply->count = 0;
+#endif
 
     return (PyObject*)result;
 }
