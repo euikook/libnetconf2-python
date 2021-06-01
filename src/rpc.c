@@ -72,6 +72,14 @@ recv_reply:
     return reply;
 }
 
+struct nc_client_reply_error {
+    NC_RPL type;
+    struct nc_err *err;
+    uint32_t count;
+    struct ly_ctx *ctx;
+};
+
+
 static PyObject *
 err_reply_converter(struct nc_client_reply_error *reply)
 {
@@ -79,8 +87,6 @@ err_reply_converter(struct nc_client_reply_error *reply)
     ncErrObject *e;
     PyObject *result = NULL;
 
-#if 0
-    result = PyList_New(reply->count);
     for (i = 0; i < reply->count; i++) {
         e = PyObject_New(ncErrObject, &ncErrType);
         e->ctx = reply->ctx;
@@ -91,7 +97,6 @@ err_reply_converter(struct nc_client_reply_error *reply)
     free(reply->err); /* pointers to the data were moved, so we are freeing just a container for the data */
     reply->err = NULL;
     reply->count = 0;
-#endif
 
     return (PyObject*)result;
 }
