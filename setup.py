@@ -12,9 +12,9 @@ netconf2Module = Extension("netconf2",
                                     "src/session.h",
                                     "src/rpc.h"
                                    ],
-                           libraries=["netconf2"],
+                           # libraries=["netconf2"],
                            extra_compile_args=["-Wall", "-I./src", "-DNC_ENABLED_SSH", "-DNC_ENABLED_TLS"],
-                           extra_link_args=[""],
+                           # extra_link_args=[""],
                         )
 
 setup(name='netconf2',
