@@ -15,6 +15,7 @@
 /* Python API header */
 #include <Python.h>
 
+
 /* standard headers */
 #include <syslog.h>
 
@@ -247,8 +248,7 @@ static struct PyModuleDef ncModule = {
 };
 
 /* module initializer */
-PyMODINIT_FUNC
-PyInit_netconf2(void)
+PyMODINIT_FUNC PyInit_netconf2(void)
 {
     void* clb;
     PyObject *nc;

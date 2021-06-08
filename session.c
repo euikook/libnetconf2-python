@@ -526,7 +526,7 @@ PyDoc_STRVAR(sessionDoc,
 
 PyTypeObject ncSessionType = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    "netconf2.Session",        /* tp_name */
+    "netconf2._netconf2.Session",        /* tp_name */
     sizeof(ncSessionObject),   /* tp_basicsize */
     0,                         /* tp_itemsize */
     (destructor)ncSessionFree, /* tp_dealloc */
